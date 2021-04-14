@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         // 2. Validate data supplied by the user
         if (textFromInput.length() == 0) {
-            Toast.makeText(MainActivity.this, textFromInput, Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "Insira um  valor na caixa de texto!", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private float convertFromCelsiusToFahrenheit(float temperatureInCelsius) {
+        Toast.makeText(MainActivity.this, "Valor convertido!", Toast.LENGTH_SHORT).show();
         return temperatureInCelsius * 1.8f + 32f;
     }
 
