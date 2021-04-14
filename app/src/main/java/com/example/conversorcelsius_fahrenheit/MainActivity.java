@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        initializeViews();
     }
 
     private  void initializeViews() {
@@ -27,13 +30,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickTemperatureConvert(View view) {
-        System.out.println("Convert");
+        //Toast.makeText(MainActivity.this, "Botão pressionado", Toast.LENGTH_SHORT).show();
 
         // 1. get text from input
-        // 2. Validate data suplied by the user
-        // 2. Convert
-        // 3. Show the result
+         String textFromInput = editTextInsertTemperature.getText().toString();
+         //Toast.makeText(MainActivity.this, textFromInput, Toast.LENGTH_SHORT).show();
+
+        // 2. Validate data supplied by the user
+        if (textFromInput.length() == 0) {
+            Toast.makeText(MainActivity.this, textFromInput, Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // 3. Convert
+        float temperatureToConvert = Float.parseFloat(textFromInput);
+        float temperatureInFahrenheit = convertFromCelsiusToFahrenheit(temperatureToConvert);
+
+        // 4. Show the result
+        textViewResult.setText(Float.toString(temperatureInFahrenheit));
     }
 
+    private float convertFromCelsiusToFahrenheit(float temperatureInCelsius) {
+        return temperatureInCelsius * 1.8f + 32f;
+    }
 
 }
