@@ -47,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
         float temperatureInFahrenheit = convertFromCelsiusToFahrenheit(temperatureToConvert);
 
         // 4. Show the result
-        textViewResult.setText(Float.toString(temperatureInFahrenheit));
+        String result = String.format("%.1f", temperatureInFahrenheit);
+        textViewResult.setText(result);
     }
 
     private float convertFromCelsiusToFahrenheit(float temperatureInCelsius) {
