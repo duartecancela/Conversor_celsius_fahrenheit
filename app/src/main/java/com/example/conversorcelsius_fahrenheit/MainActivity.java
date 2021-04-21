@@ -52,29 +52,30 @@ public class MainActivity extends AppCompatActivity {
         // 4. Show the result
         // Test type conversion
         if(editTextSelection.getText().toString().equalsIgnoreCase("C-F")) {
-            Toast.makeText(MainActivity.this, "Resultado de Celsius para Fahrenheit", Toast.LENGTH_SHORT).show();
+            String toastMessage = getResources().getString(R.string.notify_c_f);
+            Toast.makeText(MainActivity.this, toastMessage, Toast.LENGTH_SHORT).show();
             float temperatureInFahrenheit = convertFromCelsiusToFahrenheit(temperatureToConvert);
             String result = String.format("%.1f", temperatureInFahrenheit);
             textViewResult.setText(result);
 
         } else if (editTextSelection.getText().toString().equalsIgnoreCase("F-C")) {
-            Toast.makeText(MainActivity.this, "Resultado de Fahrenheit para Celsius", Toast.LENGTH_SHORT).show();
+            String toastMessage = getResources().getString(R.string.notify_f_c);
+            Toast.makeText(MainActivity.this, toastMessage, Toast.LENGTH_SHORT).show();
             float temperatureInCelsius = convertFahrenheitToCelsius(temperatureToConvert);
             String result = String.format("%.1f", temperatureInCelsius);
             textViewResult.setText(result);
         } else {
-            Toast.makeText(MainActivity.this, "Coloque F-C ou C-F", Toast.LENGTH_SHORT).show();
+            String toastMessage = getResources().getString(R.string.notify_f_or_c_empty);
+            Toast.makeText(MainActivity.this, toastMessage, Toast.LENGTH_SHORT).show();
             return;
         }
     }
 
     private float convertFromCelsiusToFahrenheit(float temperatureInCelsius) {
-        Toast.makeText(MainActivity.this, "Valor convertido de Celsius para Fahrenheit!", Toast.LENGTH_SHORT).show();
         return temperatureInCelsius * 1.8f + 32f;
     }
 
     private float convertFahrenheitToCelsius(float temperatureInFahrenheit) {
-        Toast.makeText(MainActivity.this, "Valor convertido de Fahrenheit to Celsius", Toast.LENGTH_SHORT).show();
         return (temperatureInFahrenheit - 32f) / 1.8f;
     }
 }
