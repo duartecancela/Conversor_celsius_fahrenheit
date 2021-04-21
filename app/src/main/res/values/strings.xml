@@ -4,4 +4,5 @@
     <string name="button_converter">Converter</string>
     <string name="edit_text_insert_temperature">Insira uma temperatura em Celsius</string>
     <string name="text_view_result">Resultado</string>
+    <string name="edit_text_selection">C-F or F-C</string>
 </resources>
