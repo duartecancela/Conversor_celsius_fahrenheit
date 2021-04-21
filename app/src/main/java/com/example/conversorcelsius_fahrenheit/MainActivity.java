@@ -48,23 +48,19 @@ public class MainActivity extends AppCompatActivity {
 
         // 3. Convert
         float temperatureToConvert = Float.parseFloat(textFromInput);
-        float temperatureInFahrenheit = convertFromCelsiusToFahrenheit(temperatureToConvert);
-        float temperatureInCelsius = convertFahrenheitToCelsius(temperatureToConvert);
 
         // 4. Show the result
-        //String resultF = String.format("%.1f", temperatureInFahrenheit);
-        //String resultC = String.format("%.1f", temperatureInCelsius);
-        //textViewResult.setText(resultF);
-
         // Test type conversion
         if(editTextSelection.getText().toString().equalsIgnoreCase("C-F")) {
             Toast.makeText(MainActivity.this, "Resultado de Celsius para Fahrenheit", Toast.LENGTH_SHORT).show();
+            float temperatureInFahrenheit = convertFromCelsiusToFahrenheit(temperatureToConvert);
             String result = String.format("%.1f", temperatureInFahrenheit);
             textViewResult.setText(result);
 
         } else if (editTextSelection.getText().toString().equalsIgnoreCase("F-C")) {
             Toast.makeText(MainActivity.this, "Resultado de Fahrenheit para Celsius", Toast.LENGTH_SHORT).show();
-            String result = String.format("%.1f", temperatureInFahrenheit);
+            float temperatureInCelsius = convertFahrenheitToCelsius(temperatureToConvert);
+            String result = String.format("%.1f", temperatureInCelsius);
             textViewResult.setText(result);
         } else {
             Toast.makeText(MainActivity.this, "Coloque F-C ou C-F", Toast.LENGTH_SHORT).show();
@@ -79,6 +75,6 @@ public class MainActivity extends AppCompatActivity {
 
     private float convertFahrenheitToCelsius(float temperatureInFahrenheit) {
         Toast.makeText(MainActivity.this, "Valor convertido de Fahrenheit to Celsius", Toast.LENGTH_SHORT).show();
-        return temperatureInFahrenheit - 32f / 1.8f;
+        return (temperatureInFahrenheit - 32f) / 1.8f;
     }
 }
