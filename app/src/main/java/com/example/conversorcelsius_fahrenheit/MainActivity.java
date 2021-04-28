@@ -77,10 +77,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             float temperatureInCelsius = convertFahrenheitToCelsius(temperatureToConvert);
             String result = String.format("%.1f", temperatureInCelsius);
             textViewResult.setText(result);
-        } else {
-            String toastMessage = "Escolha o tipo de conversão";
-            Toast.makeText(MainActivity.this, toastMessage, Toast.LENGTH_SHORT).show();
-            return;
         }
     }
 
