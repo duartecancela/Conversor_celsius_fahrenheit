@@ -8,4 +8,8 @@
     <string name="notify_c_f">Resultado de Celsius para Fahrenheit</string>
     <string name="notify_f_c">Resultado de Fahrenheit para Celsius</string>
     <string name="notify_f_or_c_empty">Coloque F-C ou C-F</string>
+    <string-array name="conversion_types_array">
+        <item>Celsius-Fahrenheit</item>
+        <item>Fahrenheit-Celsius</item>
+    </string-array>
 </resources>

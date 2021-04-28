@@ -53,25 +53,21 @@
         android:text="@string/text_view_result"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextSelection"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCovertionType"
         app:layout_constraintVertical_chainStyle="packed" />
 
-    <EditText
-        android:id="@+id/editTextSelection"
-        android:layout_width="0dp"
+    <Spinner
+        android:id="@+id/spinnerCovertionType"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="@string/edit_text_selection"
-        android:inputType="textPersonName"
+        android:entries="@array/conversion_types_array"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextInsertTemperature"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextInsertTemperature" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
